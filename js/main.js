@@ -1,0 +1,21 @@
+$(function(){
+    'use strict'
+    var winh = $(window).height(),
+    upperH = $('.upper-bar').innerHeight(),
+    navH = $('.navbar').innerHeight();
+    $('.slider , .carousel-item').height(winh-(upperH+navH));
+
+
+    //featured work
+
+    $('.featured-work ul li').on('click',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        if($(this).data('class')==='all'){
+            $('.main-shuffle .col-md').css('opacity','1');
+        }else{
+            $('.main-shuffle .col-md').css('opacity','0.1');
+            $($(this).data('class')).parent().css('opacity','1');
+        }
+    });
+
+});
